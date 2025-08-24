@@ -1,7 +1,7 @@
 from rich.console import Console
 from rich.panel import Panel
 import argparse
-from merinfo_scraper_modular.core_module import RobustMerinfoScraper
+from merinfo_scraper import RobustMerinfoScraper, print_search_result
 
 console = Console()
 
@@ -19,7 +19,12 @@ def main():
 
     scraper = RobustMerinfoScraper()
     with console.status("[bold green]Scraping Merinfo.se...[/bold green]"):
-        scraper.scrape(args.first_name, args.last_name, args.city)
+        result = scraper.search_person(
+            förnamn=args.first_name,
+            efternamn=args.last_name,
+            ort=args.city,
+        )
+    print_search_result(result)
 
 if __name__ == '__main__':
     main()

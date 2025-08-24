@@ -1,4 +1,7 @@
 # Auto-generated cachehantering
+from typing import Optional, Dict
+import time
+
 class MerinfoCache:
     """Enkel cache för att minska antal förfrågningar"""
     def __init__(self, max_size: int = 100, ttl: int = 3600):

@@ -1,4 +1,7 @@
 # Auto-generated logghantering
+import logging
+import sys
+
 def setup_logging(log_level=logging.INFO):
     """Konfigurerar strukturerad loggning"""
     handlers = []
@@ -26,5 +29,4 @@ def setup_logging(log_level=logging.INFO):
     return logging.getLogger(__name__)
 
 logger = setup_logging()
-
-@dataclass
+# End of logging module

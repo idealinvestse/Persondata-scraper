@@ -1,4 +1,20 @@
+from __future__ import annotations
+
+import logging
+import random
+import re
+import time
+import traceback
+import urllib.parse
+import hashlib
+from functools import lru_cache
+from typing import Optional, List, Tuple, Dict
+
+import requests
+from bs4 import BeautifulSoup
+
 # Auto-generated nätverk och retry hantering
+logger = logging.getLogger(__name__)
 def safe_request(self, url: str, retries: Optional[int] = None) -> Optional[BeautifulSoup]:
         """Gör säker HTTP-förfrågan med felhantering"""
         if retries is None:

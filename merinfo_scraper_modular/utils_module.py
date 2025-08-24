@@ -1,6 +1,11 @@
 from merinfo_scraper_modular.dataclasses_module import SearchResult
 from typing import Optional, Dict
 import logging
+from merinfo_scraper import RobustMerinfoScraper
+
+# Module-level logger to avoid NameError if logging_module isn't imported here
+logger = logging.getLogger(__name__)
+
 # Auto-generated hjälpfunktioner
 def setup_logging(log_level=logging.INFO):
     """Konfigurerar strukturerad loggning"""
